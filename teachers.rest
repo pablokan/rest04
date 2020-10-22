@@ -1,0 +1,39 @@
+@api = http://localhost:5000
+
+### post con variable de URL, clavar tres cambiando el nombre
+POST {{api}}/teachers
+Content-Type: application/json
+
+{
+    "name": "tercerNombre"
+}
+
+### meter un par de cursos cambiando la materia solamente
+POST {{api}}/courses
+Content-Type: application/json
+
+{
+    "description": "lógica",
+    "teacher_id": 2
+}
+
+### todos los teachers
+GET {{api}}/teachers
+
+### el teachers al que le cargamos los cursos
+GET {{api}}/teachers/2
+
+### modificar el nombre del docente 2
+PUT {{api}}/teachers/2
+Content-Type: application/json
+
+{
+    "name": "docente2"
+}
+
+### todos los cursos
+GET {{api}}/courses
+
+### borrar el curso 2
+DELETE {{api}}/courses/2
+
